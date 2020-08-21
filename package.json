@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "dependencies": {
+    "coveralls": "^3.1.0",
     "polished": "^3.6.5",
     "styled-components": "^5.1.1"
   },
@@ -28,7 +29,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook --no-dll --quiet",
-    "coverage": "react-scripts test --coverage --watchAll=false"
+    "coverage": "react-scripts test --coverage --watchAll=false",
+    "coverall": "npm run coverage  && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -53,9 +55,6 @@
     ]
   },
   "devDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
-    "styled-components": "^5.1.1",
     "@babel/core": "^7.11.1",
     "@storybook/addon-a11y": "^6.0.9",
     "@storybook/addon-actions": "^6.0.9",
@@ -76,9 +75,12 @@
     "@types/react-dom": "^16.9.0",
     "@types/styled-components": "^5.1.2",
     "babel-loader": "^8.1.0",
+    "react": ">=16.8.0",
     "react-docgen-typescript-loader": "^3.7.2",
+    "react-dom": ">=16.8.0",
     "react-is": "^16.13.1",
     "react-scripts": "3.4.3",
+    "styled-components": "^5.1.1",
     "typescript": "~3.7.2"
   }
 }
